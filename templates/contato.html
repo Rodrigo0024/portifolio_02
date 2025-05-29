@@ -1,0 +1,33 @@
+<!-- templates/contato.html -->
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Contato - Meu Portfólio</title>
+{% endblock %}
+
+{% block content %}
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Entre em Contato Comigo</h2>
+      <p class="lead mb-5">Se precisar tirar dúvidas ou falar sobre projetos, é só me escrever!</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-lg p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+              <div>
+                <h5>Email</h5>
+                <p class="mb-0"><strong>seu.email@example.com</strong></p>
+              </div>
+            </div>
+            <hr>
+            <p class="text-muted mt-3">
+              Estarei feliz em responder assim que possível. 😊
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

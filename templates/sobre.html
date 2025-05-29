@@ -1,0 +1,42 @@
+
+
+<!-- templates/sobre.html -->
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Sobre Mim - Meu Portfólio</title>
+{% endblock %}
+
+{% block content %}
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Sobre Mim</h2>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-md-4 text-center mb-3">
+          <!-- Foto de perfil (opcional) -->
+          <img src="{{ url_for('static', filename='img/perfil.png') }}" alt="Foto de Perfil" class="rounded-circle img-fluid shadow-sm" style="width: 180px; height: 180px; object-fit: cover;">
+        </div>
+        <div class="col-md-8">
+          <h4>Olá, sou o Rodrigo 👋</h4>
+          <p>Estou no 4º semestre do curso de Engenharia da Computação pela <strong>UNIVESP</strong>, e estou mergulhado no mundo do desenvolvimento web com:</p>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fab fa-python text-primary me-2"></i><strong>Python</strong> – Linguagem principal do backend</li>
+            <li class="list-group-item"><i class="fab fa-cuttlefish text-danger me-2"></i><strong>Flask</strong> – Para APIs e sites simples</li>
+            <li class="list-group-item"><i class="fab fa-html5 text-warning me-2"></i><strong>HTML & CSS</strong> – Base do front-end</li>
+            <li class="list-group-item"><i class="fab fa-bootstrap text-primary me-2"></i><strong>Bootstrap</strong> – Pra deixar tudo bonito</li>
+            <li class="list-group-item"><i class="fab fa-js text-warning me-2"></i><strong>JavaScript</strong> – Pra interatividade</li>
+            <li class="list-group-item"><i class="fas fa-database me-2"></i><strong>MySQL</strong> – Manipulação de dados</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card bg-light p-4 rounded-lg shadow-sm">
+        <h4>Meus Objetivos</h4>
+        <p>Quero seguir carreira como desenvolvedor full-stack, criando soluções criativas e funcionais. Estou sempre estudando e colocando em prática o que aprendo — por isso criei este portfólio!</p>
+        <p>Este site foi feito para mostrar meus projetos, habilidades e evolução ao longo da jornada no mundo da programação.</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

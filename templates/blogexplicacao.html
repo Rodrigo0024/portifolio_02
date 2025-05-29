@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Codigo do Blog</title>
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="display-1 ml-3">Como foi feito o blog?</h1>
+   <p class="lead ml-3">São importas modulos e funções flask, Importamos o SQLAlchemy integrado ao Flask, que é um ORM , ou seja, ele permite manipular bancos de dados usando objetos Python em vez de escrever diretamente comandos SQL,
+     também importamos a classe datetime do modulo padrão python, importamos o modulo OS para interagir com o sistema operacional, Importa a função secure_filename do Werkzeug, para garantir que nomes de arquivos enviados pelos usuarios são seguros </p>
+  <ul class="list-group">
+    <li class="list-group-item"><img src="static\img\1.png"></li>
+    <p class="lead ml-3">Estamos criando uma instancia da aplicação flask, Carregamos as configurações da aplicação a partir de um arquivo chamado config.py, e Inicializamos o SQLAlchemy</p>
+     <li class="list-group-item"><img src="static\img\2.png"></li>
+     <p class="lead ml-3"> Definimos uma variável chamada UPLOAD_FOLDER com o valor 'static/images', também criamos uma variavel com as extensões que serão permitidas, depois  tornamos o caminho de upload disponível globalmente na aplicação, depois criamos uma função que verifica se o arquvivo enviado pelo usuario tem uma função permitida</p>
+      <li class="list-group-item"><img src="static\img\image (4).png"></li>
+      <p class="lead ml-3">Definimos uma classe python chamada Post, essa classe herda de db.Model, que é uma classe base do SQLAlchemy,, criamos as linhas da da tabela do banco de dados, id, title. content, image, date_posted, ou seja usamos para criar o banco de dados responsavel para o armazenamento do post </p>
+       <li class="list-group-item"><img src="static\img\image (5).png"></li>
+       <p class="lead ml-3">Criamos uma rota usando a rota index, depois usamos Post.query para  iniciarmos uma consulta ao modelo Post, depois ordenamos os post por data de postagem,
+        realizamos a consulta e retornamos todos os registros em lista de objetos e salvamos na variavel Post </p>
+        <li class="list-group-item"><img src="static\img\image (6).png"></li>
+         <li class="list-group-item"><img src="static\img\image (7).png"></li>
+          <li class="list-group-item"><img src="static\img\image (8).png"></li>
+           <li class="list-group-item"><img src="static\img\image (9).png"></li>
+  </ul>
+
+{% endblock %}
+

@@ -1,0 +1,53 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Explicação sistema login</title>
+{% endblock %}
+
+  {% block content %}
+  
+  <h1 class="display-1 ml-3">Sistema de login</h1>
+
+
+<p class="ml-3">O sistema foi desenvolvido usando o framework flask, a ideia principal é colocar em pratica conhecimentos já existentes e aprender novos</p>
+<h3 class="display-2 ml-3"> Explicando o codigo</h3>
+
+
+<h5 class="ml-3">Modulos e funções Importadas</h5>
+   <img class="ml-3" src="static\img\modulo.png" alt="modulos flask">
+   <p class="ml-3"> Na imagem acima são importadas modulos e funções do flask, também são importas variaveis do arquivo config, e é importada da  biblioteca bcrypt para criptografia</p>
+   <img  class="ml-3" src="static\img\loginco.png" >
+
+
+   <ul class="list-group">
+      <li class="list-group-item">Primeiramente é inicializada a aplicação</li>
+      <li class="list-group-item">Depois é criada uma chave secreta</li>
+      <li class="list-group-item">Depois é criada uma rota que renderiza o template responsavel pela pagina inicial do site</li>
+      <li class="list-group-item">Depois é criada a rota login recebendo os metedos GET e POST, se o metodo for Post a variavel username vai receber os dados do formulario "username" e a variavel passeword vai receber os dados do formulario 'passaword', o metodo . encode está convertendo a string(texto) em uma sequencia de bytes</li>
+      <li class="list-group-item">Depois é executada uma consulta SQL que seleciona da tabela usuario  todos os usuarios onde o username é igual username</li>
+      <li class="list-group-item">Depois é selecionada apenas uma unica linha da consulta</li>
+      <li class="list-group-item">Depois converte a senha para uma sequencia de bytes e salva ela em uma variavel somente se algum usuario for encontrado</li>
+      <li class="list-group-item">Depois é verificado se a senha está correta</li>
+      <li class="list-group-item">Depois ele marca o usuario como logado</li>
+      <li class="list-group-item">Depois ele salva o id do usuario,nome e tipo do  usuario, no caso a permição do usuario "ADMIN", "CLIENTE"</li>
+      <li class="list-group-item">Se o tipo de usuario for admin ele manda ele para a area do admin, se não for ele manda para a area do usuario comum</li>
+      <li class="list-group-item"> Caso não passe nas verificações é retornado que o login falhou e renderiza a pagina de login novamente</li>
+  </ul>
+  
+  <ul class="list-group">
+      <li class="list-group-item">  <img src="static\img\user.png"></li>
+      <li class="list-group-item">Na imagem abaixo é criada a rota da area de usuario, ela verifica se está logada na seção e se o tipo de usuario é igual a user, se for ele vai rederizar a area de usuario e passar a variavel username para a pagina, caso não atenda a condição ele redireciona para a pagina de login</li>
+      <li class="list-group-item"> <img src="static\img\admin.jpg" alt=""></li>
+      <li class="list-group-item">Temos a rota da area do admin, ela verifica se está logado e se o tipo de usuario é admin, caso seja verdadeiro ela renderiza a area de admin junto da variavel username, caso contrario ela manda para pagina login</li>
+      <li class="list-group-item"> <img src="static\img\register1.png"></li>  
+      <li class="list-group-item">Na roa register recebomos os metodos GET e Post, se o metodo for post ele salva o username e o password, depois e verifica se todos os campos obrigatorios foram preenchidos, caso não estiver preenchidos ele exibe que todos devem ser preenchidos e renderiza a pagina de registro novamente, depois verifica se as senhas são iguais, caso não seja ele exibe uma mensagem de erro  e renderiza a pagina de registro, depois verifica se o usuario existe e se existir ele salva em uma variavel e depois ele exibe que o usuario já existe e manda para a pagina de registro denovo</li>
+      <li class="list-group-item"> Depois na proxima linha estamos gerando um hash seguro de uma senha usando a biblioteca bcrypt</li>
+      <li class="list-group-item">Depois os dados estão sendo inseridos no banco de dados</li>
+      <li class="list-group-item"><img src="static\img\register2.png"></li>
+      <li class="list-group-item"> Na proxima linha ele mostra ao usuario que o cadastro foi feito com sucesso e redireciona para a pagina de login</li>
+      <li class="list-group-item"> Mas caso algo de errado ele redireciona novamente para  apagina de registro</li>
+      <li class="list-group-item">Essas duas ultimas linhas do  código executa a aplicação Flask localmente , somente quando o arquivo for executado diretamente como um script</li>
+      <li class="list-group-item"> Link do projeto no git: <a href="https://github.com/Rodrigo0024/sistema-de-login">Veja o projeto completo no GIT</a></li>
+    </ul>
+  {% endblock %}

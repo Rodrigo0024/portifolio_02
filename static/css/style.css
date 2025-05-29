@@ -1,0 +1,28 @@
+/* static/css/style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #1f3491;
+  color: #ffffff;
+}
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #ffffff;
+
+}
+nav {
+    border-bottom: 3px solid #ffffff; /* cor azul bootstrap */
+}
+.btn-custom{
+  color: #b3e4fa;
+}
+.card-body{
+  color: black;
+}
+.list-group-item{
+  background-color: #1f3491;
+}
+.card{
+  color: black;
+}

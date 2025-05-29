@@ -1,0 +1,32 @@
+<!-- templates/novo_projeto.html -->
+{% extends "base.html" %}
+
+{% block title %}
+  <title>Novo Projeto - Meu Portfólio</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <h2 class="mb-4">Adicionar Novo Projeto</h2>
+
+    <form method="POST" action="{{ url_for('novo_projeto') }}" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título do Projeto</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" required>
+      </div>
+      <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição do Projeto</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="imagem" class="form-label">Imagem do Projeto</label>
+        <input class="form-control" type="file" id="imagem" name="imagem" accept="image/*">
+      </div>
+      <div class="mb-3">
+        <label for="link" class="form-label">Link do Projeto (GitHub, site, etc.)</label>
+        <input type="url" class="form-control" id="link" name="link" placeholder="https://...">
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar Projeto</button>
+    </form>
+  </div>
+{% endblock %}
