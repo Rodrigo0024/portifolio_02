@@ -1,4 +1,5 @@
 # app.py
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -42,6 +43,11 @@ def sobre():
 @app.route('/sistemaloginexplicacao')
 def sistemaloginexplicacao():
     return render_template('sistema_login_explicacao.html')
+
+@app.route('/crmflaskexplicacao')
+def crmflaskexplicacao():
+    return render_template('crmflaskexplicacao.html')
+
 
 @app.route('/blogexplicacao')
 def blogexplicacao():

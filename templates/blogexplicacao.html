@@ -20,9 +20,16 @@
        <p class="lead ml-3">Criamos uma rota usando a rota index, depois usamos Post.query para  iniciarmos uma consulta ao modelo Post, depois ordenamos os post por data de postagem,
         realizamos a consulta e retornamos todos os registros em lista de objetos e salvamos na variavel Post </p>
         <li class="list-group-item"><img src="static\img\image (6).png"></li>
+        <p class="lead ml-3"> Criamos a rota post, ela recebe um parametro dinamico que post_id que é do tipo inteiro, Post.query.get_or_404(post_id): É uma função do SQLAlchemy que tenta buscar um registro na tabela Post com o ID fornecido.Se o post existir, ele é retornado.
+Se não existir, Flask retorna automaticamente um erro HTTP 404</p>
          <li class="list-group-item"><img src="static\img\image (7).png"></li>
+         <p class="lead ml-3"> Depois creamos a rota create_post, ela verifica se o metodo é igual a POST, se for ela recebe os dados do formulario e salva eles em suas variaveis, depois verifica se foi feito uploud da image e se ela tem um formato permitido, depois a função secure_filename garante que o nome do arquivo seja seguro para salvar no sistema, depois salvamos a imagem em uma pasta no servidor, depois guardamos o nome do arquivo em uma variavel, depois criamos um objeto Post com os dados capturados, title, content, image, adicionamos  o post à sessão do SQLAlchemy,Confirmamos as alterações no banco de dados com commit(), depois é redirecionado para a pagina inicial após a criação do post  </p>
           <li class="list-group-item"><img src="static\img\image (8).png"></li>
+          <p class="lead ml-3"> Depois criamos a rota delete, ela recebe um parametro do tipo inteiro, Post.query.get_or_404(post_id): É uma função do SQLAlchemy que tenta buscar um registro na tabela Post com o ID fornecido.
+Se o post existir, ele é retornado. Se não existir, o Flask retorna automaticamente um erro HTTP 404, depois exluimos o post do banco de dados e Confirmamos a exclusão, depois redirecionamos para a pagina inicial.
            <li class="list-group-item"><img src="static\img\image (9).png"></li>
+                 <li class="list-group-item"> Link do projeto no git: <a href="https://github.com/Rodrigo0024/Blog-com-flask">Veja o projeto completo no GIT</a></li>
+
   </ul>
 
 {% endblock %}

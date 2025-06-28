@@ -23,6 +23,18 @@ nav {
 .list-group-item{
   background-color: #1f3491;
 }
-.card{
-  color: black;
+ .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            color: black;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+.perfil-foto:hover{
+   transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
